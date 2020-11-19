@@ -1,0 +1,23 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "Craftory Studio Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CraftoryStudios/DiscordBot.git"
+  },
+  "author": "BrettSaunders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CraftoryStudios/DiscordBot/issues"
+  },
+  "homepage": "https://github.com/CraftoryStudios/DiscordBot#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "discord.js-commando": "github:discordjs/Commando"
+  }
+}
