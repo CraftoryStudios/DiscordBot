@@ -10,7 +10,8 @@ const client = new CommandoClient({
 client.registry
 	.registerDefaultTypes()
 	.registerGroups([
-		['first', 'Your First Command Group']
+		['first', 'Your First Command Group'],
+		['wiki', 'Commands related to wiki actions']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()
