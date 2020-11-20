@@ -3,10 +3,10 @@ const { Command } = require('discord.js-commando');
 module.exports = class WikiLink extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'wikiLink',
+			name: 'wikilink',
 			aliases: ['wiki'],
 			group: 'wiki',
-			memberName: 'wikiLink',
+			memberName: 'wikilink',
 			description: 'Replies with a a link to the wiki.'
 		});
 	}
