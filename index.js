@@ -3,7 +3,7 @@ const path = require('path');
 
 const client = new CommandoClient({
 	commandPrefix: '?',
-	owner: 'Brett#6032',
+	owner: '197773056557580288',
 	invite: 'https://discord.gg/bRCvFy9',
 });
 
