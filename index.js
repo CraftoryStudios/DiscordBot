@@ -23,4 +23,4 @@ client.once('ready', () => {
 
 client.on('error', console.error);
 
-client.login(process.env.LOGIN_KEY);
+client.login(process.env.token);
