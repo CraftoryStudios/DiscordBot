@@ -24,6 +24,6 @@ module.exports = class WikiLink extends Command {
 	}
 
 	run(message) {
-		return message.say({ embed: wrenchEmbed });
+		return message.say({ embed: configuratorEmbed });
 	}
 };
