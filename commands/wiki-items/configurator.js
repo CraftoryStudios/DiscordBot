@@ -1,6 +1,6 @@
 const { Command } = require('discord.js-commando');
 
-const wrenchEmbed = {
+const configuratorEmbed = {
   "description": "The configurator has one function and that’s to copy the output side configs from one machine to the other, allowing mass placement of machines. Learn more here.\n\n https://craftory.studio/craftory-tech/wiki/configurator.html",
   "color": 16645948,
   "author": {
@@ -24,6 +24,6 @@ module.exports = class WikiLink extends Command {
 	}
 
 	run(message) {
-		return message.say({ embed: wrenchEmbed });
+		return message.say({ embed: configuratorEmbed });
 	}
 };
