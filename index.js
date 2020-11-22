@@ -10,8 +10,11 @@ const client = new CommandoClient({
 client.registry
 	.registerDefaultTypes()
 	.registerGroups([
-		['first', 'Your First Command Group'],
-		['wiki', 'Commands related to wiki actions']
+		['wiki', 'Commands related to wiki actions'],
+		['wiki-machines', 'Commands related to machines on the wiki'],
+		['wiki-ores', 'Commands related to ores on the wiki'],
+		['wiki-items', 'Commands related to itmes on the wiki'],
+		['plugin', 'Commands related to general plugin information']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()
