@@ -6,6 +6,7 @@ const request = require('request');
 const bodyParser = require('body-parser');
 
 var app = express();
+var port = process.env.PORT || 3123;
 
 
 // --Database Connection--
