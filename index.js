@@ -1,19 +1,12 @@
 const { CommandoClient } = require('discord.js-commando');
 const path = require('path');
 const admin = require("firebase-admin");
-const express = require('express');
-const request = require('request');
-const bodyParser = require('body-parser');
-
-var app = express();
-var port = process.env.PORT || 3123;
 
 // --Database Connection--
 admin.initializeApp({
 	credential: admin.credential.cert(JSON.parse(Buffer.from(process.env.FIREBASE_BASE64, 'base64').toString('ascii'))),
 	databaseURL: "https://discord-bot-d78e8.firebaseio.com"
-});
-
+  });
 
 /* Set up the bot to report on the craftory discord and with the ? as a
 listener for commands. */
@@ -61,22 +54,3 @@ client.on('error', console.error);
 
 // Login to the discords using a env 
 client.login(process.env.token);
-
-// --Webhooks Trello--
-
-// Allows us to easily read the payload from the webhook
-app.use( bodyParser.json() );
-
-app.all("/trello", function(req, res, next) {
-	console.log(req.body);
-	res.send('OK');
-});
-
-
-// Standard NodeJS Listener
-var server = app.listen(port, function () {
-	var host = server.address().address;
-	var port = server.address().port;
-
-	console.log('Listening at http://%s:%s in %s', host, port);
-});
