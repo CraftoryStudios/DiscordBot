@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['resource-pack'],
 			group: 'plugin',
 			memberName: 'resource-pack',
-			description: 'Replies with a link to the resource pack.'
+			description: 'Replies with a link to the resource pack.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

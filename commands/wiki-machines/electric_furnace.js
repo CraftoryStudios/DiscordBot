@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['furnance'],
 			group: 'wiki-machines',
 			memberName: 'electric-furnance',
-			description: 'Replies with a link to the electric furnace wiki.'
+			description: 'Replies with a link to the electric furnace wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

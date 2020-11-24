@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['config'],
 			group: 'wiki-items',
 			memberName: 'configurator',
-			description: 'Replies with a link to the Configurator wiki.'
+			description: 'Replies with a link to the Configurator wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

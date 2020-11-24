@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['copper'],
 			group: 'wiki-ores',
 			memberName: 'copper-ore',
-			description: 'Replies with a link to the Copper Ore wiki.'
+			description: 'Replies with a link to the Copper Ore wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

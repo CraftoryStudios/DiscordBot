@@ -20,7 +20,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['excavator'],
 			group: 'wiki-items',
 			memberName: 'excavator',
-			description: 'Replies with a link to the Excavator wiki.'
+			description: 'Replies with a link to the Excavator wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

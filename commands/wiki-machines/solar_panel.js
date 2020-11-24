@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['solar'],
 			group: 'wiki-machines',
 			memberName: 'solar-panel',
-			description: 'Replies with a link to the Solar Panel wiki.'
+			description: 'Replies with a link to the Solar Panel wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

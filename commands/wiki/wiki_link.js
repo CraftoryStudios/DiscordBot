@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['wiki'],
 			group: 'wiki',
 			memberName: 'wikilink',
-			description: 'Replies with a link to the wiki.'
+			description: 'Replies with a link to the wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

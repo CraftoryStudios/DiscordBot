@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['magnatiser'],
 			group: 'wiki-machines',
 			memberName: 'magnatiser',
-			description: 'Replies with a link to the magnatiser wiki.'
+			description: 'Replies with a link to the magnatiser wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

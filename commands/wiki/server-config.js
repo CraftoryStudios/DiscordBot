@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['servconfig'],
 			group: 'wiki',
 			memberName: 'server-config',
-			description: 'Replies with a link to the server config page.'
+			description: 'Replies with a link to the server config page.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 
