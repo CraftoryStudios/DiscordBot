@@ -79,6 +79,7 @@ var lockedLists = ["5fbbe28f30271622a6de89e4"];
 //Webhook
 app.all("/trello", function(req, res, next) {
   if (
+    req && req.body && req.body.action &&
     req.body.action.type === "updateCard" &&
     req.body.action.display.translationKey ===
       "action_move_card_from_list_to_list" &&
