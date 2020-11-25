@@ -89,6 +89,6 @@ module.exports = class WikiLink extends Command {
 						  return message.say({ embed: exampleEmbed }); 
 						  The .then part after the message.say is only for this template to auto
 						  remove the embed because this is not a real command. */
-		return message.say({ embed: exampleEmbed(fullUsername) }).then(msg => {msg.delete({ timeout: 5000 }) });
+		return message.say({ embed: exampleEmbed }).then(msg => {msg.delete({ timeout: 5000 }) });
 	}
 };
