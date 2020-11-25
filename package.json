@@ -4,7 +4,10 @@
   "description": "Craftory Studio Discord bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,8 @@
     "discord.js-commando": "github:discordjs/Commando",
     "express": "^4.17.1",
     "firebase-admin": "^9.4.1",
-    "request": "^2.88.2"
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "trello-node-api": "0.0.8"
   }
 }

@@ -67,6 +67,7 @@ module.exports = class WikiLink extends Command {
 			
 			/* description - This is what is returned when asking the bot to return all
 							 commands. Can be something simple or very detailed. */
+      
 			description: 'Replies with a link to the resource pack.',
 			
 			/* throttling - This controlls the amount of times a command can be issued in a
