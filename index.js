@@ -101,6 +101,7 @@ app.all("/trello", function(req, res, next) {
   res.send("OK");
 });
 
+//Required to stay awake
 app.get('/ping',(req,res) => {
   return res.send('Hello');
   });
