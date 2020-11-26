@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['perms'],
 			group: 'wiki',
 			memberName: 'permissions',
-			description: 'Replies with a link to the permissions page.'
+			description: 'Replies with a link to the permissions page.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['macerator'],
 			group: 'wiki-machines',
 			memberName: 'macerator',
-			description: 'Replies with a link to the macerator wiki.'
+			description: 'Replies with a link to the macerator wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

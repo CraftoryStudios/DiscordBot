@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['plugin'],
 			group: 'plugin',
 			memberName: 'plugin-link',
-			description: 'Replies with a link to the plugins spigot page.'
+			description: 'Replies with a link to the plugins spigot page.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

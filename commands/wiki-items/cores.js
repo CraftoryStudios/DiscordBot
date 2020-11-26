@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['cores'],
 			group: 'wiki-items',
 			memberName: 'cores',
-			description: 'Replies with a link to the Cores wiki.'
+			description: 'Replies with a link to the Cores wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

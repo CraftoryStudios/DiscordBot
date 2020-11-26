@@ -20,7 +20,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['generator'],
 			group: 'wiki-machines',
 			memberName: 'solid-fuel-generator',
-			description: 'Replies with a link to the Solid Fuel Generator wiki.'
+			description: 'Replies with a link to the Solid Fuel Generator wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

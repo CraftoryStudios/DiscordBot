@@ -67,7 +67,18 @@ module.exports = class WikiLink extends Command {
 			
 			/* description - This is what is returned when asking the bot to return all
 							 commands. Can be something simple or very detailed. */
-			description: 'Replies with a link to the resource pack.'
+      
+			description: 'Replies with a link to the resource pack.',
+			
+			/* throttling - This controlls the amount of times a command can be issued in a
+							a row and the amount of time till the command can  be issues again. */
+			throttling: {
+				// useage - How many times a command can be used in a row
+				usages: 1,
+				
+				// duration - The time a user must wait between issuing the command. In seconds. 
+				duration: 10,
+			}
 		});
 	}
 
@@ -77,7 +88,7 @@ module.exports = class WikiLink extends Command {
 		/* Returns the message calling exampleEmbed to have the message with an embed.
 					NOTE: You will only need to have:
 						  return message.say({ embed: exampleEmbed }); 
-						  The .then part after the message.say is only for this templete to auto
+						  The .then part after the message.say is only for this template to auto
 						  remove the embed because this is not a real command. */
 		return message.say({ embed: exampleEmbed }).then(msg => {msg.delete({ timeout: 5000 }) });
 	}

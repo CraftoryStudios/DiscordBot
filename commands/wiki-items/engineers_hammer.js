@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['enghammer'],
 			group: 'wiki-items',
 			memberName: 'engineers-hammer',
-			description: 'Replies with a link to the Engineers Hammer wiki.'
+			description: 'Replies with a link to the Engineers Hammer wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

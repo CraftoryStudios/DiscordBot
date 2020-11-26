@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['foundry'],
 			group: 'wiki-machines',
 			memberName: 'foundry',
-			description: 'Replies with a link to the foundry wiki.'
+			description: 'Replies with a link to the foundry wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

@@ -59,8 +59,8 @@ client.once('ready', () => {
 
 // Read all incoming messages and remove any message needed
 client.on('message', message => {
-	// Remove messages that start with ? after 1 second
-	if (message.content.startsWith("?")) {
+	// Remove messages that start with ? after 1 second and remove the throttle rate error messages
+	if (message.content.startsWith("?") || message.content.includes("command again for another")) {
 		message.delete({timeout: 1000});
     }
 });

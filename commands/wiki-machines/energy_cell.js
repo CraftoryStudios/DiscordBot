@@ -20,7 +20,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['cell'],
 			group: 'wiki-machines',
 			memberName: 'energy-cell',
-			description: 'Replies with a link to the energy cell wiki.'
+			description: 'Replies with a link to the energy cell wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 

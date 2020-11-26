@@ -19,7 +19,11 @@ module.exports = class WikiLink extends Command {
 			aliases: ['table'],
 			group: 'wiki-machines',
 			memberName: 'magnatisation-table',
-			description: 'Replies with a link to the Magnatisation Table wiki.'
+			description: 'Replies with a link to the Magnatisation Table wiki.',
+			throttling: {
+				usages: 1,
+				duration: 10,
+			}
 		});
 	}
 
