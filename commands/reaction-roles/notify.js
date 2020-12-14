@@ -15,7 +15,7 @@ client.on("message", async message => {
     if (message.author.bot) return false;
 
     // Getting the role by ID.
-	let channel = message.guild.channels.cache.get("732162017955414057");
+	const channel = message.guild.channels.cache.get("732162017955414057");
     const role1 = message.guild.roles.cache.get(channel);
 
     // Creating a filter.
@@ -25,7 +25,8 @@ client.on("message", async message => {
     const reactionMessage = await message.channel.get(channel).send(Embed);
 
     // Reacting to the embed message.
-    await reactionMessage.react("📢");
+	const notifyEmoji = reactionMessage.react("📢");
+    await reactionMessage.react(notifyEmoji);
 
     // Awaiting a reaction to the embed message. Time is measured in ms. (3000 ms - 3 seconds)
     reactionMessage.awaitReactions(filter, {max: 1, time: 3000, errors: ["time"]}).then(collected => {
@@ -34,7 +35,7 @@ client.on("message", async message => {
         
         // Creating a switch statement for reaction.emoji.name.
         switch (reaction.emoji.name) {
-            case "📢":
+            case notifyEmoji:
                 // Checking if the member already has the role.
                 if (message.member.roles.cache.has(role1.id)) {return user.send("You already subscribed to the Notify role in Craftory")};
                 // Adding the role.
