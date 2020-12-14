@@ -15,10 +15,10 @@ client.on("message", async message => {
     if (message.author.bot) return false;
 
     // Getting the role by ID.
-    const Role1 = message.guild.roles.cache.get("732162017955414057");
+    const role1 = message.guild.roles.cache.get("732162017955414057");
 
     // Creating a filter.
-    const Filter = (reaction, user) => user.id == message.author.id;
+    const filter = (reaction, user) => user.id == message.author.id;
 
     // Awaiting for the embed message to be sent.
     const reactionMessage = await message.channel.get("732161595362377819").send(Embed);
@@ -37,7 +37,7 @@ client.on("message", async message => {
                 // Checking if the member already has the role.
                 if (message.member.roles.cache.has(Role1.id)) {return user.send("You already subscribed to the Notify role in Craftory")};
                 // Adding the role.
-                message.member.roles.add(Role1).then(user.send("You are now subscribed to Craftory devlogs!"));
+                message.member.roles.add(Role1).then(user.send("You are now subscribed to Craftory devlogs!"))
                 // Breaking the switch statement to make sure no other cases are executed.
                 break
         }
