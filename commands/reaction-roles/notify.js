@@ -5,12 +5,11 @@ const channel = client.channels.cache.get('732161595362377819');
 const Embed = {
 	/* This is the main body of the embedded message. The \n character will
 	add new lines for extra space in the command. */
-	"description": "React to this message to get the Notify role. \n\nReact to this message to get the Notify role. \n\nWe will still Notify all of important updates, but this role will notify you on release of new DevLogs and additional resources!",
+	"description": "React to this message to get the Notify role. \nReact to this message to get the Notify role. \nWe will still Notify all of important updates, but this role will notify you on release of new DevLogs and additional resources!",
 	
 	// The color of the embed is in a decimal format.
 	"color": 3077393,
 };
-
 
 client.on("message", async message => {
     // Checking if the message author is a bot.
@@ -23,12 +22,13 @@ client.on("message", async message => {
     const Filter = (reaction, user) => user.id == message.author.id;
 
     // Awaiting for the embed message to be sent.
+	channel = client.channels.cache.get('732161595362377819');
     const reactionMessage = await message.channel.send(Embed);
 
     // Reacting to the embed message.
     await reactionMessage.react("📢");
 
-    // Awaiting a reaction to the embed message. Time is measured in ms. (30000 ms - 30 seconds)
+    // Awaiting a reaction to the embed message. Time is measured in ms. (3000 ms - 3 seconds)
     reactionMessage.awaitReactions(Filter, {max: 1, time: 3000, errors: ["time"]}).then(collected => {
         // Getting the first reaction in the collection.
         const reaction = collected.first();
