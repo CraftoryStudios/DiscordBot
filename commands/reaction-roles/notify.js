@@ -22,7 +22,7 @@ client.on("message", async message => {
     const Filter = (reaction, user) => user.id == message.author.id;
 
     // Awaiting for the embed message to be sent.
-	channel = client.channels.cache.get('732161595362377819');
+	let channel = client.channels.cache.get('732161595362377819');
     const reactionMessage = await message.channel.send(Embed);
 
     // Reacting to the embed message.
