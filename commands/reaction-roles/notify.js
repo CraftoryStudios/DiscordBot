@@ -1,6 +1,5 @@
 // Imports the discord.js-commando library which is required for commands to work. 
 const { Command } = require('discord.js-commando');
-const channel = client.channels.cache.get('732161595362377819');
 
 const Embed = {
 	/* This is the main body of the embedded message. The \n character will
