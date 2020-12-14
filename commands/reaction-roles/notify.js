@@ -27,7 +27,7 @@ client.on("message", async message => {
     await reactionMessage.react("📢");
 
     // Awaiting a reaction to the embed message. Time is measured in ms. (3000 ms - 3 seconds)
-    reactionMessage.awaitReactions(Filter, {max: 1, time: 3000, errors: ["time"]}).then(collected => {
+    reactionMessage.awaitReactions(filter, {max: 1, time: 3000, errors: ["time"]}).then(collected => {
         // Getting the first reaction in the collection.
         const reaction = collected.first();
         
@@ -35,9 +35,9 @@ client.on("message", async message => {
         switch (reaction.emoji.name) {
             case "📢":
                 // Checking if the member already has the role.
-                if (message.member.roles.cache.has(Role1.id)) {return user.send("You already subscribed to the Notify role in Craftory")};
+                if (message.member.roles.cache.has(role1.id)) {return user.send("You already subscribed to the Notify role in Craftory")};
                 // Adding the role.
-                message.member.roles.add(Role1).then(user.send("You are now subscribed to Craftory devlogs!"))
+                message.member.roles.add(role1).then(user.send("You are now subscribed to Craftory devlogs!"))
                 // Breaking the switch statement to make sure no other cases are executed.
                 break
         }
