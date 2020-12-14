@@ -15,13 +15,14 @@ client.on("message", async message => {
     if (message.author.bot) return false;
 
     // Getting the role by ID.
-    const role1 = message.guild.roles.cache.get("732162017955414057");
+	let channel = message.guild.channels.cache.get("732162017955414057");
+    const role1 = message.guild.roles.cache.get(channel);
 
     // Creating a filter.
     const filter = (reaction, user) => user.id == message.author.id;
 
     // Awaiting for the embed message to be sent.
-    const reactionMessage = await message.channel.get("732161595362377819").send(Embed);
+    const reactionMessage = await message.channel.get(channel).send(Embed);
 
     // Reacting to the embed message.
     await reactionMessage.react("📢");
