@@ -41,7 +41,7 @@ client.on("message", async message => {
                 // Adding the role.
                 message.member.roles.add(role1).then(user.send("You are now subscribed to Craftory devlogs!"));
                 // Breaking the switch statement to make sure no other cases are executed.
-                break
+                break;
         }
     })
 });
