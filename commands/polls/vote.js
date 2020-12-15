@@ -16,8 +16,8 @@ module.exports = class VoteCommand extends Command {
                     prompt: 'What is the vote question?',
                     type: 'string',
                     validate: question => {
-                        if (question.length < 101 && question.length > 11) return true;
-                        return 'Polling questions must be between 10 and 100 characters in length.';
+                        if (question.length < 255) return true;
+                        return 'Polling questions must be less than 255 characters';
                     }
                 },
                 {
@@ -26,8 +26,8 @@ module.exports = class VoteCommand extends Command {
                     type: 'string',
                     default: ' ',
                     validate: desc => {
-                        if (desc.length < 201 && desc.length > 11) return true;
-                        return 'Polling questions must be between 10 and 200 characters in length.';
+                        if (desc.length < 255) return true;
+                        return 'Polling questions must be less than 255 characters.';
                     }
                 },
                 {
@@ -36,8 +36,8 @@ module.exports = class VoteCommand extends Command {
                     type: 'integer',
                     default: 0,
                     validate: time => {
-                        if (time >= 0 && time <= 60) return true;
-                        return 'Polling time must be between 0 and 60.';
+                        if (time >= 0 && time <= 14*24*60) return true; // 14 days
+                        return 'Polling time must be between 0 minutes and 14 days';
                     } 
                 }
             ]
