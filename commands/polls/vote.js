@@ -80,16 +80,16 @@ module.exports = class VoteCommand extends Command {
                                 
                                 // Find winner(s)
                                 var max = -Infinity;
-								var indexMax = [];
+				var indexMax = [];
                                 for(var i = 0; i < reactionCountsArray.length; ++i) {
                                     if (reactionCountsArray[i] > max) 
-									{
-										max = reactionCountsArray[i];
-										indexMax = [i];
-                                    } else if (reactionCountsArray[i] === max) {
-										indexMax.push(i);
-									}
-								}
+			            {
+					max = reactionCountsArray[i];
+					indexMax = [i];
+				    } else if (reactionCountsArray[i] === max) {
+				        indexMax.push(i);
+				    }
+			        }
                                   
                                 // Display winner(s)
                                 console.log(reactionCountsArray); // Debugging votes
