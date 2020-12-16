@@ -34,14 +34,11 @@ client.on("message", async message => {
         const reaction = collected.first();
         
         // Creating a switch statement for reaction.emoji.name.
-        switch (reaction.emoji.name) {
-            case notifyEmoji:
-                // Checking if the member already has the role.
-                if (message.member.roles.cache.has(role1.id)) {return user.send("You already subscribed to the Notify role in Craftory")}
-                // Adding the role.
-                message.member.roles.add(role1).then(user.send("You are now subscribed to Craftory devlogs!"));
-                // Breaking the switch statement to make sure no other cases are executed.
-                break;
+        if (reaction.emoji.name == notifyEmoji) {
+          // Checking if the member already has the role.
+          if (message.member.roles.cache.has(role1.id)) {return user.send("You already subscribed to the Notify role in Craftory")}
+            // Adding the role.
+            message.member.roles.add(role1).then(user.send("You are now subscribed to Craftory devlogs!"));
         }
     })
 });
