@@ -32,7 +32,7 @@ module.exports = class PollCommand extends Command {
                 },
                 {
                     key: 'time',
-                    prompt: 'How long should the poll last in minutes?',
+                    prompt: '(Optional) How long should the poll last in minutes?',
                     type: 'integer',
                     default: 0,
                     validate: time => {
