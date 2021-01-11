@@ -44,7 +44,7 @@ client.registry
 		['wiki-ores', 'Commands related to ores on the wiki'],
 		['wiki-items', 'Commands related to itmes on the wiki'],
 		['plugin', 'Commands related to general plugin information'],
-    ['suggestions', 'Commands related to suggesting features']
+		['suggestions', 'Commands related to suggesting features']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()
@@ -59,11 +59,49 @@ client.once('ready', () => {
 
 // Read all incoming messages and remove any message needed
 client.on('message', message => {
-	// Remove messages that start with ? after 1 second and remove the throttle rate error messages
-	if (message.content.startsWith("?") || message.content.includes("command again for another")) {
+	// Remove messages that start with ? after 1 second. Make sure to add any new commands to this switch.
+	switch(message.content) {
+		case "?example-command":
+		case "?windmill":
+		case "?water-wheel":
+		case "?guide":
+		case "?permissions":
+		case "?server-config":
+		case "?wikilink":
+		case "?block-breaker":
+		case "?block-placer":
+		case "?electric-furnance":
+		case "?energy-cell":
+		case "?foundry":
+		case "?macerator":
+		case "?magnatisation-table":
+		case "?magnatiser":
+		case "?solar-panel":
+		case "?generator":
+		case "?copper-ore":
+		case "?configurator":
+		case "?cores":
+		case "?drill":
+		case "?engineers-hammer":
+		case "?excavator":
+		case "?power-hammer":
+		case "?sickle":
+		case "?wrench":
+		case "?plugin-link":
+		case "?resource-pack":
+		case "?suggest":
+			message.delete({timeout: 1000});
+			break;
+		default:
+			break;
+	}		
+	
+	// Remove the throttle rate return messages
+	if (message.content.includes("command again for another") || message.content.includes("Unknown command. Use")) {
 		message.delete({timeout: 1000});
     }
 });
+
 
 // Write any errors to console
 client.on('error', console.error);
