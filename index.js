@@ -4,6 +4,8 @@ const admin = require("firebase-admin");
 const express = require("express");
 const request = require("request");
 const bodyParser = require("body-parser");
+const fs = require('fs');
+
 
 // --Express Setup --
 const trelloNode = require("trello-node-api")(
