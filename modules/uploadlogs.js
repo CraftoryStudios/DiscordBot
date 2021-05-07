@@ -17,9 +17,8 @@ module.exports = client => {
     
           try {
             let content = await axios.get(attachment.url);
-            let response = await axios.post(`https://api.mclo.gs/1/log `, content.data);
-
-            await message.channel.send(attachment.url);
+            console.log(content);
+            let response = await axios.post(`https://api.mclo.gs/1/log`, {content: content.data});
     
             await message.channel.send(
               `Please use <https://mclo.gs/> to send logs in the future. I have automatically uploaded \`${attachment.name}\` for you: ${response.url}`
