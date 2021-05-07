@@ -31,6 +31,16 @@ const client = new CommandoClient({
 	invite: 'https://discord.gg/bRCvFy9',
 });
 
+//Load Modules
+const modules = fs.readdirSync(`${__dirname}/modules`).map(module => {
+  console.log(`Loading module: ${module}`);
+  return require(`./modules/${module}`);
+});
+
+modules.forEach(module => module(client));
+console.log(`Loaded ${modules.length} modules`);
+
+
 /* Register any needed groups for the commands
    NOTE: If you add any folder with commands make sure to
    add the new folder here and a decent description.*/
